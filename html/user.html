@@ -30,6 +30,26 @@
 					<td>17666129412</td>
 				</tr>
 			</tbody>
+			<!--一下为其他数据，包含for循环与if条件判断-->
+			<tbody>
+				<!--判断messages变量是否为空-->
+                {% if messages %}
+					<!--for循环-->
+                    {% for message in messages %}
+                    <tr>
+                        <td>{{ message.publish_date }}</td>
+                        <td>{{ message.username }}</td>
+                        <td>{{ message.title }}</td>
+                        <td>{{ message.content }}</td>
+                    </tr>
+                    {% endfor %}
+				<!--若无数据则给予提示-->
+                {% else %}
+                    <tr>
+                        <td colspan="4">无数据</td>
+                    </tr>
+                {% endif %}
+            </tbody>
 		</table>
 	</body>
 </html>
